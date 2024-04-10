@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from flask import Flask, request, jsonify,Response
 import threading
 import time
+import os
 
 app = Flask(__name__)
 
@@ -40,5 +41,5 @@ def stock_price(symbol):
 
 
 if __name__ == '__main__':
-    prt = process.env.PORT || 4000
-    app.run(debug=True, port=prt)
+    prt = int(os.environ.get('PORT', 3000))
+    app.run(debug=True,  port=prt)
