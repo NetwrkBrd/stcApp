@@ -42,4 +42,4 @@ def stock_price(symbol):
 
 if __name__ == '__main__':
     prt = int(os.environ.get('PORT', 3000))
-    app.run(debug=True,  port=prt)
+    app.run(debug=True, host='0.0.0.0',  port=prt)
